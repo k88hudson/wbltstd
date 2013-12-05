@@ -41,7 +41,7 @@ app.use(app.router);
 
 routes(app, standardText.text, i18n.getLanguages().map(function(item) {
   return {
-    name: i18n.languageNameFor(item),
+    name: item,
     locale: item
   };
 }));
