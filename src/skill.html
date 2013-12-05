@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <section>
+
+      {% if wrongVersion %}
+      <div class="wrong-version">
+        <i class="fa fa-warning fa-3x"></i>
+        You tried to access an old/wrong version of this skill ({{wrongVersion}}), so we're showing you the most recent version instead (v.{{version}}).
+      </div>
+      {% endif %}
+
+      <h3>Skill # {{code}}</h3>
+
+      <h3><span class="hint--left hint--inline" data-hint="Strand">{{gettext(strand)}}</span> / <span class="hint--right hint--inline" data-hint="Competency">{{gettext(competency)}}</span></h3>
+      <h2>{{gettext(skillText)}}</h2>
+
+    </section>
+    <script src="/bower_components/requirejs/require.js" data-main="main"></script>
+  </body>
+</html>
+{% endblock %}

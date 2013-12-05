@@ -1,0 +1,473 @@
+/*********************************************************
+* Colours
+*/
+@yellow: #ffcd36;
+@lightyellow: #fff2cc;
+@darkyellow: #eab514;
+@orange: #ee8950;
+@darkgreen: #328f70;
+@red: #D93B3B;
+@green: #3fb58e;
+@grey: #4d4e53;
+@lightgrey: #e3eaee;
+@midgrey: #ddd;
+@white: #fff;
+@black: #000;
+
+@blue: #0099FF;
+@lightbrown: lighten(#696659, 30%);
+
+/*********************************************************
+* Breakpoints
+*/
+@width-small: 320px;
+@width-medium: 480px;
+@width-large: 960px;
+@width-xlarge: 1540px;
+
+
+// MIXINS
+@import "mixins";
+
+/*********************************************************
+* Bower Imports
+*/
+
+
+// Font Awesome
+// Use http://fortawesome.github.io/Font-Awesome/cheatsheet/ as a guide
+@import "bower_components/font-awesome/less/font-awesome";
+@fa-font-path: "/bower_components/font-awesome/fonts";
+
+// Hint
+@import (less) "bower_components/hint.css/hint.css";
+.hint,
+[data-hint] {
+  display: block;
+}
+.hint--inline,
+.hint--inline[data-hint] {
+  display: inline-block;
+}
+
+// Myfonts
+#mfPreviewBar {
+  display: none;
+}
+
+// BASELINE
+.baseline {
+  background-image: url(http://basehold.it/i/36) !important;
+  background-color: #DBE0E7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@leading: 1.8em;
+@leadingpx: 36px;
+
+body {
+  font-family: 'Sharik Sans', sans-serif;
+  color: #595647;
+  font-size: 20px;
+  line-height: @leading;
+  margin: 0;
+  padding: @leadingpx;
+
+  @media print {
+    font-size: 16px;
+  }
+}
+
+.main {
+  padding-top: 4 * @leading;
+  @media print {
+    padding-top: 0;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: #111;
+  }
+}
+
+.main a {
+  background-color: fade(lighten(@yellow, 20%), 20%);
+  text-decoration: none;
+  color: #111;
+  padding: 0.4em 0.1em 0.1em;
+  border-bottom: 1px solid @yellow;
+  &:hover {
+    background-color: lighten(@yellow, 20%);
+  }
+}
+
+a.skill {
+  background-color: transparent;
+  border-bottom: none;
+  padding: 0;
+  vertical-align: top;
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  &:hover {
+    background-color: lighten(@yellow, 20%);
+  }
+}
+
+.btn {
+  border: 1px solid #DDD;
+  border-radius: 2px;
+  padding: 3px 6px;
+}
+
+header {
+
+  @media print {
+    display: none;
+  }
+
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  align-items: center;
+  padding: 0 14px;
+  z-index: 100;
+
+  color: #CCC;
+
+  background: fade(#595647, 90%);
+  border-bottom: 1px solid #595647;
+
+  transition: all 0.3s ease-out;
+
+  &.white {
+    border-bottom: 1px solid #EEE;
+    background: fade(white, 90%);
+
+    .logo {
+      color: #111;
+    }
+  }
+
+  > span {
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+  .logo {
+    margin-right: 2em;
+    color: white;
+  }
+}
+
+.end-item {
+  flex-grow: 1;
+  text-align: right;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1;
+  margin-bottom: 0.58em;
+  margin-top: 0;
+
+  @media print {
+    font-size: 2.8em;
+    margin-bottom: 0.75em;
+  }
+}
+
+.language-picker {
+  font-size: 0.7em;
+
+  > a {
+    opacity: 0.4;
+    margin-right: 0.5em;
+    border-bottom: none;
+  }
+  .fa-globe {
+    margin-right: 0.2em;
+  }
+  .selected {
+    opacity: 1;
+  }
+}
+
+.version {
+  @media print {
+    font-size: 1em;
+    padding: 0;
+    border: none;
+    color: inherit;
+    background: none;
+    .fa-github {
+      display: none;
+    }
+  }
+  font-size: 0.25em;
+  background: @blue;
+  color: white;
+  border: none;
+  vertical-align: middle;
+  padding: 0.3em;
+  border-radius: 0.3em;
+
+  .fa-github {
+    font-size: 0.8em;
+    opacity: 0.8;
+  }
+}
+
+.wrong-version {
+  background: @yellow;
+  border: 1px solid darken(@yellow, 15%);
+  padding: @leadingpx/2;
+  border-raidus: 3px;
+  margin-bottom: @leadingpx;
+  .fa-warning {
+    float: left;
+    margin-right: 15px;
+    color: darken(@yellow, 15%);
+  }
+}
+
+h2 {
+  font-size: 2.5em;
+  line-height: 2 * @leadingpx;
+  margin-bottom: 0;
+  margin-top: 2 * 1/2.5 * @leading;
+}
+
+
+// COUNTERS
+body {
+  counter-reset: strand;
+}
+
+h2.strand .section-title {
+  counter-increment: strand;
+  position: relative;
+  &:before {
+    position: absolute;
+    right: 100%;
+    margin-right: 20px;
+    font-size: 0.8em;
+    text-align: right;
+    color: @lightbrown;
+    content: counter(strand);
+  }
+}
+
+section {
+  counter-reset: competency;
+}
+
+article {
+  position: relative;
+  counter-increment: competency;
+  &:before {
+    position: absolute;
+    right: 100%;
+    margin-right: 20px;
+    color: @lightbrown;
+    text-align: right;
+    content: counter(strand) '.' counter(competency);
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+
+// MORE TYPE
+h3 {
+  font-size: 1.3em;
+  margin: 0;
+  line-height: @leadingpx;
+  font-family: 'Sharik Sans SemiBold';
+}
+
+
+h3 + p {
+  margin: 0;
+  color: @lightbrown;
+  font-family: 'Sharik Sans Italic';
+}
+
+
+strong {
+  color: @blue;
+}
+
+
+.category {
+  @media print {
+    font-size: 1.3em;
+  }
+  margin-bottom: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.leader {
+  order: 2;
+  flex-grow: 1;
+  line-height: 1;
+  font-size: 0.3em;
+  overflow: hidden;
+  white-space: nowrap;
+  color: lighten(#595647, 50%);
+  width: 0;
+  &:before {
+    content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ';
+  }
+}
+
+.section-title {
+  order: 1;
+  @media print {
+    font-size: 1.3em;
+  }
+}
+
+.defn {
+  order: 3;
+  color: lighten(#595647, 20%);
+  font-family: 'Sharik Sans';
+  font-size: 0.5em;
+  line-height: 1.16;
+  font-weight: normal;
+  max-width: 50%;
+  text-align: right;
+}
+
+
+p {
+  margin: @leading 0;
+}
+
+button {
+  font-size: 1em;
+  color: inherit;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
+}
+
+section {
+  width: 100%;
+  margin: 0 auto;
+  @media (min-width: 760px) {
+    width: 760px;
+  }
+}
+
+// #section-exploring {
+//   color: #1E4147;
+//   background-color: lighten(#AAC789, 15%);
+//   .leader, .defn, h3 + p {
+//     color: #437356;
+//   }
+// }
+
+
+.title-section {
+  font-size: 1.3em;
+  line-height: 1.8;
+
+  p {
+    margin: 1.38em 0;
+  }
+
+  @media print {
+    font-size: 1em;
+    padding-top: 5em;
+  }
+}
+
+article {
+  margin: @leading 0;
+}
+
+footer {
+  height: 300px;
+}
+
+
+// Tabzilla
+
+.tabzilla {
+  display: block;
+  background: url('/media/img/tabzilla/tab.png');
+  height: 44px;
+  width: 150px;
+  position: relative;
+  text-indent: -2000px;
+  overflow: hidden;
+
+  position: absolute;
+  top: 0;
+  right: 40px;
+  background: url(https://www.webmaker.org/img/tab.png) top left no-repeat;
+  background-size: 150px;
+
+  &.print-only {
+    display: none;
+    background: none;
+    overflow: hidden;
+    text-indent: 0;
+    right: 0;
+    img {
+      width: 100%;
+    }
+    @media print {
+      display: block;
+    }
+  }
+}
+
+
+// Join badge
+.join-badge-container {
+  @media print {
+    display: none;
+  }
+  overflow: hidden;
+  height: 0;
+  transition: height 0.2s ease-in;
+  &.show {
+    height: 45px;
+  }
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  text-align: right;
+  background: white;
+  .join-badge {
+    display: inline-block;
+    font-size: 14px;
+    color: #918C75;
+  }
+  .fa-heart {
+    color: #F92672;
+  }
+}
+
+// PAGES
+@import './languages';

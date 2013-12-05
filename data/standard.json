@@ -1,0 +1,294 @@
+{
+  "version": "1.0",
+  "text": [
+    {
+      "strand": "StandardExploring",
+      "strandDesc": "StandardExploringDesc",
+      "competencies": [
+        {
+          "competency": "StandardExploringNav",
+          "competencyDesc": "StandardExploringNavDesc",
+          "skills": [
+            {
+              "skill": "StandardExploringNavPoint1"
+            },
+            {
+              "skill": "StandardExploringNavPoint2"
+            },
+            {
+              "skill": "StandardExploringNavPoint3"
+            },
+            {
+              "skill": "StandardExploringNavPoint4"
+            },
+            {
+              "skill": "StandardExploringNavPoint5"
+            }
+          ]
+        },
+        {
+          "competency": "StandardExploringWM",
+          "competencyDesc": "StandardExploringWMDesc",
+          "skills": [
+            {
+              "skill": "StandardExploringWMPoint1"
+            },
+            {
+              "skill": "StandardExploringWMPoint2"
+            },
+            {
+              "skill": "StandardExploringWMPoint3"
+            }
+          ]
+        },
+        {
+          "competency": "StandardExploringSearch",
+          "competencyDesc": "StandardExploringSearchDesc",
+          "skills": [
+            {
+              "skill": "StandardExploringSearchPoint1"
+            },
+            {
+              "skill": "StandardExploringSearchPoint2"
+            },
+            {
+              "skill": "StandardExploringSearchPoint3"
+            }
+          ]
+        },
+        {
+          "competency": "StandardExploringCredibility",
+          "competencyDesc": "StandardExploringCredibilityDesc",
+          "skills": [
+            {
+              "skill": "StandardExploringCredibilityPoint1"
+            },
+            {
+              "skill": "StandardExploringCredibilityPoint2"
+            },
+            {
+              "skill": "StandardExploringCredibilityPoint3"
+            },
+            {
+              "skill": "StandardExploringCredibilityPoint4"
+            }
+          ]
+        },
+        {
+          "competency": "StandardExploringSecurity",
+          "competencyDesc": "StandardExploringSecurityDesc",
+          "skills": [
+            {
+              "skill": "StandardExploringSecurityPoint1"
+            },
+            {
+              "skill": "StandardExploringSecurityPoint2"
+            },
+            {
+              "skill": "StandardExploringSecurityPoint3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strand": "StandardBuilding",
+      "strandDesc": "StandardBuildingDesc",
+      "competencies": [
+        {
+          "competency": "StandardBuildingComposing",
+          "competencyDesc": "StandardBuildingComposingDesc",
+          "skills": [
+            {
+              "skill": "StandardBuildingComposingPoint1"
+            },
+            {
+              "skill": "StandardBuildingComposingPoint2"
+            },
+            {
+              "skill": "StandardBuildingComposingPoint3"
+            },
+            {
+              "skill": "StandardBuildingComposingPoint4"
+            },
+            {
+              "skill": "StandardBuildingComposingPoint5"
+            }
+          ]
+        },
+        {
+          "competency": "StandardBuildingRemixing",
+          "competencyDesc": "StandardBuildingRemixingDesc",
+          "skills": [
+            {
+              "skill": "StandardBuildingRemixingPoint1"
+            },
+            {
+              "skill": "StandardBuildingRemixingPoint2"
+            },
+            {
+              "skill": "StandardBuildingRemixingPoint3"
+            }
+          ]
+        },
+        {
+          "competency": "StandardBuildingDesign",
+          "competencyDesc": "StandardBuildingDesignDesc",
+          "skills": [
+            {
+              "skill": "StandardBuildingDesignPoint1"
+            },
+            {
+              "skill": "StandardBuildingDesignPoint2"
+            },
+            {
+              "skill": "StandardBuildingDesignPoint3"
+            },
+            {
+              "skill": "StandardBuildingDesignPoint4"
+            },
+            {
+              "skill": "StandardBuildingDesignPoint5"
+            }
+          ]
+        },
+        {
+          "competency": "StandardBuildingCoding",
+          "competencyDesc": "StandardBuildingCodingDesc",
+          "skills": [
+            {
+              "skill": "StandardBuildingCodingPoint1"
+            },
+            {
+              "skill": "StandardBuildingCodingPoint2"
+            },
+            {
+              "skill": "StandardBuildingCodingPoint3"
+            },
+            {
+              "skill": "StandardBuildingCodingPoint4"
+            },
+            {
+              "skill": "StandardBuildingCodingPoint5"
+            }
+          ]
+        },
+        {
+          "competency": "StandardBuildingInfra",
+          "competencyDesc": "StandardBuildingInfraDesc",
+          "skills": [
+            {
+              "skill": "StandardBuildingInfraPoint1"
+            },
+            {
+              "skill": "StandardBuildingInfraPoint2"
+            },
+            {
+              "skill": "StandardBuildingInfraPoint3"
+            },
+            {
+              "skill": "StandardBuildingInfraPoint4"
+            },
+            {
+              "skill": "StandardBuildingInfraPoint5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strand": "StandardConnecting",
+      "strandDesc": "StandardConnectingDesc",
+      "competencies": [
+        {
+          "competency": "StandardConnectingSharing",
+          "competencyDesc": "StandardConnectingSharingDesc",
+          "skills": [
+            {
+              "skill": "StandardConnectingSharingPoint1"
+            },
+            {
+              "skill": "StandardConnectingSharingPoint2"
+            },
+            {
+              "skill": "StandardConnectingSharingPoint3"
+            },
+            {
+              "skill": "StandardConnectingSharingPoint4"
+            },
+            {
+              "skill": "StandardConnectingSharingPoint5"
+            },
+            {
+              "skill": "StandardConnectingSharingPoint6"
+            }
+          ]
+        },
+        {
+          "competency": "StandardConnectingCommunity",
+          "competencyDesc": "StandardConnectingCommunityDesc",
+          "skills": [
+            {
+              "skill": "StandardConnectingCommunityPoint1"
+            },
+            {
+              "skill": "StandardConnectingCommunityPoint2"
+            },
+            {
+              "skill": "StandardConnectingCommunityPoint3"
+            },
+            {
+              "skill": "StandardConnectingCommunityPoint4"
+            },
+            {
+              "skill": "StandardConnectingCommunityPoint5"
+            },
+            {
+              "skill": "StandardConnectingCommunityPoint6"
+            }
+          ]
+        },
+        {
+          "competency": "StandardConnectingPrivacy",
+          "competencyDesc": "StandardConnectingPrivacyDesc",
+          "skills": [
+            {
+              "skill": "StandardConnectingPrivacyPoint1"
+            },
+            {
+              "skill": "StandardConnectingPrivacyPoint2"
+            },
+            {
+              "skill": "StandardConnectingPrivacyPoint3"
+            },
+            {
+              "skill": "StandardConnectingPrivacyPoint4"
+            },
+            {
+              "skill": "StandardConnectingPrivacyPoint5"
+            }
+          ]
+        },
+        {
+          "competency": "StandardConnectingOpen",
+          "competencyDesc": "StandardConnectingOpenDesc",
+          "skills": [
+            {
+              "skill": "StandardConnectingOpenPoint1"
+            },
+            {
+              "skill": "StandardConnectingOpenPoint2"
+            },
+            {
+              "skill": "StandardConnectingOpenPoint3"
+            },
+            {
+              "skill": "StandardConnectingOpenPoint4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,60 @@
+@import 'mixins';
+
+#language {
+  text-align: center;
+}
+#list-of-languages .list {
+  padding: 2em 0;
+  list-style: none;
+  .clearfix();
+  text-align: left;
+
+  li {
+    width: 25%;
+    float: left;
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    background: none;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: #27AAE1;
+    }
+  }
+
+  // Only show localized language names
+  .alternate-names {
+    display: none;
+  }
+
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+#language-search {
+  width: 200px;
+  border: 1px solid #DDD;
+  padding: 0.5em 0.5em 0.5em 1.8em;
+  font-family: inherit;
+  font-size: 1em;
+  &:focus {
+    outline: none;
+    border-color: #00ACEE;
+  }
+}
+
+#empty-message {
+  display: none;
+}
+
+label[for="language-search"] {
+  position: absolute;
+  left: 0.6em;
+  top: 0.5em;
+  color: #CCC;
+}

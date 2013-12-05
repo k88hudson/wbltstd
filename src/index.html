@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <section class="title-section">
+    <p class="language-picker">
+      <a href="/languages" class="selected">
+        <i class="fa fa-globe"></i>
+        {{localeInfo.name}}
+      </a>
+    <!--   {% if localeInfo.lang != 'en-US' %}
+      <a href="/en-US">English (US)</a>
+      {% endif %}
+      {% if localeInfo.lang != 'fr' %}
+      <a href="/fr">Français</a>
+      {% endif %}
+      {% if localeInfo.lang != 'es' %}
+      <a href="/es">Español</a>
+      {% endif %}
+      <a href="/languages">. . .</a> -->
+    </p>
+    <h1>{{gettext('WebLiteracyStandard')}}
+      <span class="version">
+        <span class="fa fa-github"></span>
+        {{version}}
+      </span>
+    </h1>
+    <p>{{gettext('StandardMainDesc')}}</p>
+
+    <p>{{gettext('StandardMainDescInProgress') | safe}}</p>
+
+    <p>The Web Literacy Standard is made up of three strands: <a href="#section-exploring">Exploring</a>, <a href="#section-building">Building</a> and <a href="#section-connecting">Connecting</a>. In turn, each strand is made up of several competencies. Each competency is comprised of a number of skills.</p>
+
+  </section>
+  {% for strand in standardText %}
+  {% set iStrand = loop.index %}
+  <section class="strand" id="strand-{{iStrand}}">
+    <h2 class="category strand">
+      <span class="leader"></span>
+      <span class="section-title">{{gettext(strand.strand)}}</span>
+      <span class="defn">{{gettext(strand.strandDesc)}}</span>
+    </h2>
+    {% for competency in strand.competencies %}
+    {% set iCompetency = loop.index %}
+    <article>
+      <h3 id="competency-{{iCompetency}}">{{gettext(competency.competency)}}</h3>
+      <p class="competency-defn">{{gettext(competency.competencyDesc)}}</p>
+      </h3>
+      <ul>
+        {% for skill in competency.skills %}
+        {% set iSkill = loop.index %}
+        <li ><a class="skill" href="/{{localeInfo.lang}}/skills/{{iStrand}}.{{iCompetency}}.{{iSkill}}/v{{version}}">{{gettext(skill.skill)}}</a></li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </section>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block requirejs %}languages{% endblock %}
+{% block body %}
+  <section id="language">
+
+    <h2>The web literacy standard is offered in <strong>{{languages.length}}</strong> languages.</h2>
+
+    <p>
+      <div class="input-wrapper">
+        <label for="language-search"><i class="fa fa-search"></i></label>
+        <input id="language-search">
+      </div>
+    </p>
+
+    <div id="list-of-languages">
+      <div id="empty-message">No languages found.</div>
+      <ul class="list">
+        {% for language in languages %}
+        <li><a href="/{{language.locale}}">
+          <span class="localized-name">{{language.name}}</span>
+          <span class="alternate-names"></span>
+        </a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <p>Is your language missing? <a href="/translate">Go here to translate into your language</a></p>
+  </section>
+{% endblock %}
