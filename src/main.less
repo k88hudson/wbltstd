@@ -14,6 +14,7 @@
 * Bower Imports
 */
 
+//@import "fira";
 
 // Font Awesome
 // Use http://fortawesome.github.io/Font-Awesome/cheatsheet/ as a guide
@@ -60,10 +61,14 @@
 }
 
 * {
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 @fontStack: 'Sharik Sans', 'Roboto Slab', sans-serif;
+@displayFont: 'Sharik Sans', 'Roboto Slab', sans-serif;
 
 @leading: 1.8em;
 @leadingpx: 36px;
@@ -71,10 +76,10 @@
 body {
   font-family: @fontStack;
   color: #595647;
-  font-size: 20px;
   line-height: @leadingpx;
+  font-size: 20px;
   margin: 0;
-  padding: @leadingpx;
+  padding: 0 @leadingpx;
 
   @media print {
     font-size: 16px;
@@ -126,18 +131,17 @@ a.skill {
 }
 
 header {
-
-  @media print {
-    display: none;
+  display: none;
+  @media screen and (min-width: @width-large) {
+    .display-flex();
   }
 
   position: fixed;
-  display: flex;
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
-  align-items: center;
+  .align-items(center);
   padding: 0 14px;
   z-index: 100;
 
@@ -162,19 +166,29 @@ header {
     white-space: nowrap;
   }
   .logo {
+    font-family: @displayFont;
+    font-weight: 700;
     margin-right: 2em;
     color: white;
   }
 }
 
 .end-item {
-  flex-grow: 1;
+  .flex-grow(1);
   text-align: right;
 }
 
+h1, h2, h3 {
+  font-family: @displayFont;
+}
+
 h1 {
-  font-size: 4em;
-  line-height: 1;
+  @media screen and (min-width: @width-medium) {
+    font-size: 4em;
+    line-height: 1;
+  }
+  font-size: 2em;
+  line-height: @leadingpx * 1.5;
   margin-bottom: 0.58em;
   margin-top: 0;
 
@@ -242,7 +256,7 @@ h2.strand .section-title {
   &:before {
     position: absolute;
     right: 100%;
-    margin-right: 20px;
+    margin-right: 12px;
     font-size: 0.8em;
     text-align: right;
     color: @lightbrown;
@@ -261,7 +275,7 @@ article {
   &:before {
     position: absolute;
     right: 100%;
-    margin-right: 20px;
+    margin-right: 12px;
     color: @lightbrown;
     text-align: right;
     content: counter(strand) '.' counter(competency);
@@ -299,13 +313,13 @@ strong {
     font-size: 1.3em;
   }
   margin-bottom: 0;
-  display: flex;
-  align-items: baseline;
+  .display-flex();
+  .align-items(baseline);
 }
 
 .leader {
-  order: 2;
-  flex-grow: 1;
+  .flex-order(2);
+  .flex-grow(1);
   line-height: 1;
   font-size: 0.3em;
   overflow: hidden;
@@ -318,14 +332,14 @@ strong {
 }
 
 .section-title {
-  order: 1;
+  .flex-order(1);
   @media print {
     font-size: 1.3em;
   }
 }
 
 .defn {
-  order: 3;
+  .flex-order(3);
   color: lighten(#595647, 20%);
   font-weight: normal;
   font-size: 0.5em;
