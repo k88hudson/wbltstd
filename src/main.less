@@ -58,21 +58,23 @@
 // BASELINE
 .baseline {
   background-image: url(http://basehold.it/i/36) !important;
-  background-color: #DBE0E7;
+  background-position-y: -12px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+@fontStack: 'Sharik Sans', 'Roboto Slab', sans-serif;
+
 @leading: 1.8em;
 @leadingpx: 36px;
 
 body {
-  font-family: 'Sharik Sans', sans-serif;
+  font-family: @fontStack;
   color: #595647;
   font-size: 20px;
-  line-height: @leading;
+  line-height: @leadingpx;
   margin: 0;
   padding: @leadingpx;
 
@@ -213,6 +215,7 @@ h1 {
     border: none;
     color: inherit;
     background: none;
+    whtie-space: nowrap;
     .fa-github {
       display: none;
     }
@@ -406,7 +409,7 @@ section {
 }
 
 article {
-  margin: @leading 0;
+  margin: @leadingpx 0;
 }
 
 footer {

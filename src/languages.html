@@ -17,8 +17,8 @@
       <ul class="list">
         {% for language in languages %}
         <li><a href="/{{language}}">
-          <span class="localized-name">{{languageNameFor(language)}}</span>
-          <span class="alternate-names"></span>
+          <span class="localized-name hint--bottom hint--inline" data-hint="{{languageEnglishName(language)}}" >{{languageNameFor(language)}}</span>
+          <span class="alternate-names">{{languageEnglishName(language)}}</span>
         </a></li>
         {% endfor %}
       </ul>
