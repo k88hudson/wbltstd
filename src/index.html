@@ -6,16 +6,16 @@
         <i class="fa fa-globe"></i>
         {{localeInfo.name}}
       </a>
-    <!--   {% if localeInfo.lang != 'en-US' %}
-      <a href="/en-US">English (US)</a>
-      {% endif %}
-      {% if localeInfo.lang != 'fr' %}
-      <a href="/fr">Français</a>
-      {% endif %}
-      {% if localeInfo.lang != 'es' %}
-      <a href="/es">Español</a>
-      {% endif %}
-      <a href="/languages">. . .</a> -->
+<!--       <div class="language-picker-box">
+        <ul>
+        {% for language in languages %}
+        <li><a href="/{{language.locale}}">
+          <span class="localized-name">{{language.name}}</span>
+          <span class="alternate-names"></span>
+        </a></li>
+        {% endfor %}
+        </ul>
+      </div> -->
     </p>
     <h1>{{gettext('WebLiteracyStandard')}}
       <span class="version">

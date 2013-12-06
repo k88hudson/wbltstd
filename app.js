@@ -39,12 +39,7 @@ app.use('/bower_components', express.static(__dirname + '/bower_components', cac
 
 app.use(app.router);
 
-routes(app, standardText.text, i18n.getLanguages().map(function(item) {
-  return {
-    name: item,
-    locale: item
-  };
-}));
+routes(app, standardText.text, i18n.getSupportLanguages());
 
 app.listen(env.get('PORT'), function () {
   console.log('Now listening on http://localhost:%d', env.get('PORT'));

@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block requirejs %}languages{% endblock %}
+{% block requirejs %}/languages{% endblock %}
 {% block body %}
   <section id="language">
 
@@ -16,8 +16,8 @@
       <div id="empty-message">No languages found.</div>
       <ul class="list">
         {% for language in languages %}
-        <li><a href="/{{language.locale}}">
-          <span class="localized-name">{{language.name}}</span>
+        <li><a href="/{{language}}">
+          <span class="localized-name">{{languageNameFor(language)}}</span>
           <span class="alternate-names"></span>
         </a></li>
         {% endfor %}
