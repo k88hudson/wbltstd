@@ -1,0 +1,57 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 2702844, 2013-12-06T00:35:20-0500
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Sharik Sans by Dada Studio
+ * URL: http://www.myfonts.com/fonts/dada-studio/sharik-sans/regular/
+ * 
+ * Webfont: Sharik Sans Italic by Dada Studio
+ * URL: http://www.myfonts.com/fonts/dada-studio/sharik-sans/italic/
+ * 
+ * Webfont: Sharik Sans SemiBold by Dada Studio
+ * URL: http://www.myfonts.com/fonts/dada-studio/sharik-sans/semi-bold/
+ * 
+ * Webfont: Sharik Sans SemiBold Italic by Dada Studio
+ * URL: http://www.myfonts.com/fonts/dada-studio/sharik-sans/semi-bold-italic/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2702844
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright &#x00A9; 2013 by Micha&#x0142; Jaroci&#x0144;ski. All rights reserved.
+ *
+ * © 2013 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/293dfc");
+
+@font-face {
+  font-family: 'Sharik Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/Sharik/fonts/293DFC_0_0.ttf') format('truetype');}
+
+@font-face {
+  font-family: 'Sharik Sans';
+  font-weight: 400;
+  font-style: italic;
+  src: url('/Sharik/fonts/293DFC_1_0.ttf') format('truetype');}
+
+@font-face {
+  font-family: 'Sharik Sans';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/Sharik/fonts/293DFC_2_0.ttf') format('truetype');}
+
+@font-face {
+  font-family: 'Sharik Sans';
+  font-weight: 700;
+  font-style: italic;
+  src: url('/Sharik/fonts/293DFC_3_0.ttf') format('truetype');}

@@ -1,9 +1,84 @@
 @import 'mixins';
+@import 'colors';
+
+.language-picker {
+  font-size: 0.7em;
+  position: relative;
+
+  > a {
+    opacity: 0.4;
+    margin-right: 0.5em;
+    border-bottom: none;
+  }
+  .fa-globe {
+    margin-right: 0.2em;
+  }
+  .selected {
+    opacity: 1;
+  }
+}
+
+.language-picker-box {
+  display: none;
+  position: absolute;
+  width: 360px;
+  font-size: 14px;
+  border: 1px solid @yellow;
+  background: white;
+  padding: 1em;
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 100%;
+    margin-right: -7px;
+    top: 24px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid @yellow;
+    border-right: none;
+    border-top: none;
+    background: white;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .list a {
+    border: none;
+    background: none;
+    padding: 5px;
+    border-radius: 3px;
+    &.selected {
+      background: @yellow;
+      color: darken(@yellow, 30%);
+    }
+  }
+  .input-wrapper {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .language-search {
+    display: block;
+    width: 100%;
+  }
+  .english-name {
+    display: none;
+  }
+  .list {
+    padding: 0;
+    list-style: none;
+    li {
+      float: left;
+      width: 33%;
+    }
+  }
+}
+
 
 #language {
   text-align: center;
 }
-#list-of-languages .list {
+.list-of-languages .list {
   padding: 2em 0;
   list-style: none;
   .clearfix();
@@ -19,13 +94,10 @@
     background: none;
     border: none;
     transition: all 0.2s ease-in-out;
-    &:hover {
-      color: #27AAE1;
-    }
   }
 
   // Only show localized language names
-  .alternate-names {
+  .english-name {
     display: none;
   }
 
@@ -36,19 +108,21 @@
   display: inline-block;
 }
 
-#language-search {
+.language-search {
   width: 200px;
   border: 1px solid #DDD;
   padding: 0.5em 0.5em 0.5em 1.8em;
   font-family: inherit;
   font-size: 1em;
+  transition: all 0.2s ease-in;
   &:focus {
     outline: none;
-    border-color: #00ACEE;
+    border-color: darken(@yellow, 10%);
+    box-shadow: 0 1px 4px -2px @yellow;
   }
 }
 
-#empty-message {
+.empty-message {
   display: none;
 }
 

@@ -5,12 +5,15 @@ requirejs.config({
     nunjucks: 'nunjucks/browser/nunjucks',
     templates: '../templates',
     jquery: 'jquery/jquery',
-    list: 'listjs/dist/list.min'
+    list: 'listjs/dist/list.min',
+    fuzzySearch: 'list.fuzzysearch.js/dist/list.fuzzysearch.min',
+    languages: '../languages'
   }
 });
 
 require([
-  'jquery'
+  'jquery',
+  'languages'
 ], function(
   $
 ) {
@@ -33,22 +36,6 @@ require([
   $('.download-btn').on('click', function(e) {
     e.preventDefault();
     window.print();
-  });
-
-  // Tooltips
-  $('section.strand').each(function(iSection, section) {
-    var $h2 = $(section).find('h2');
-    $h2.addClass('hint--left');
-    $h2.attr('data-hint', 'Strand ' + (iSection + 1));
-    $(section).find('article').each(function(iCompetency, article) {
-      var $h3 = $(article).find('h3');
-      $h3.addClass('hint--left');
-      $h3.attr('data-hint', 'Competency ' + (iSection + 1) + '.' + (iCompetency + 1));
-      // $(article).find('li').each(function(iSkill, skill) {
-      //   $(skill).addClass('hint--left');
-      //   $(skill).attr('data-hint', 'Skill ' + (iSection + 1) + '.' + (iCompetency + 1) + '.' + (iSkill + 1));
-      // });
-    });
   });
 
   $('a[href*=#]:not([href=#])').on('click', function(e) {

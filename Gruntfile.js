@@ -22,6 +22,15 @@ module.exports = function (grunt) {
         file: 'app.js'
       }
     },
+    font_optimizer: {
+      default: {
+        options: {
+        },
+        files: {
+          'dist': ['src/Sharik/fonts/*.ttf'],
+        }
+      }
+    },
     watch: {
       less: {
         files: ['src/**/*.less'],
@@ -81,7 +90,8 @@ module.exports = function (grunt) {
           mainConfigFile: './src/main.js',
           include: ['main'],
           paths: {
-            'templates': '../dist/templates'
+            'templates': '../dist/templates',
+            'languages': '../src/languages'
           },
           out: './dist/main.js'
         }
@@ -96,17 +106,22 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-nunjucks');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-font-optimizer');
 
   grunt.registerTask('default', [
     'less:development',
     'nunjucks',
-    'jshint',
     'copy',
     'develop',
     'watch'
   ]);
 
+  grunt.registerTask('fonts', [
+  'font_optimizer:default'
+  ]);
+
   grunt.registerTask('heroku', [
+    'jshint',
     'nunjucks',
     'less:production',
     'requirejs',

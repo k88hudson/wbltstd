@@ -2,20 +2,30 @@
 {% block body %}
   <section class="title-section">
     <p class="language-picker">
-      <a href="/languages" class="selected">
+      <a id="current-language" class="selected">
         <i class="fa fa-globe"></i>
         {{localeInfo.name}}
       </a>
-<!--       <div class="language-picker-box">
-        <ul>
+      <div id="list-of-languages" class="language-picker-box">
+
+        <div>The web literacy standard is offered in <strong>{{languages.length}}</strong> languages.</div>
+
+        <div class="input-wrapper">
+          <label for="language-search"><i class="fa fa-search"></i></label>
+          <input id="language-search" class="language-search">
+        </div>
+
+        <div class="empty-message" id="empty-message">Is your language missing? <a target="_blank" href="https://support.mozilla.org/en-US/kb/translate-webmaker">Translate it!</a></div>
+
+        <ul class="list">
         {% for language in languages %}
-        <li><a href="/{{language.locale}}">
-          <span class="localized-name">{{language.name}}</span>
-          <span class="alternate-names"></span>
+        <li><a{% if language == localeInfo.lang %} class="selected"{% endif %} href="/{{language}}">
+          <span class="localized-name hint--bottom hint--inline" data-hint="{{languageEnglishName(language)}}" >{{languageNameFor(language)}}</span>
+          <span class="english-name">{{languageEnglishName(language)}}</span>
         </a></li>
         {% endfor %}
         </ul>
-      </div> -->
+      </div>
     </p>
     <h1>{{gettext('WebLiteracyStandard')}}
       <span class="version">
@@ -33,7 +43,7 @@
   {% for strand in standardText %}
   {% set iStrand = loop.index %}
   <section class="strand" id="strand-{{iStrand}}">
-    <h2 class="category strand">
+    <h2 class="category strand hint--left hint--red" data-hint="Strand {{iStrand}}">
       <span class="leader"></span>
       <span class="section-title">{{gettext(strand.strand)}}</span>
       <span class="defn">{{gettext(strand.strandDesc)}}</span>
@@ -41,13 +51,13 @@
     {% for competency in strand.competencies %}
     {% set iCompetency = loop.index %}
     <article>
-      <h3 id="competency-{{iCompetency}}">{{gettext(competency.competency)}}</h3>
+      <h3 class="hint--left" data-hint="Competency {{iStrand}}.{{iCompetency}}" id="competency-{{iStrand}}.{{iCompetency}}">{{gettext(competency.competency)}}</h3>
       <p class="competency-defn">{{gettext(competency.competencyDesc)}}</p>
       </h3>
       <ul>
         {% for skill in competency.skills %}
         {% set iSkill = loop.index %}
-        <li ><a class="skill" href="/{{localeInfo.lang}}/skills/{{iStrand}}.{{iCompetency}}.{{iSkill}}/v{{version}}">{{gettext(skill.skill)}}</a></li>
+        <li ><a class="skill hint--left hint--inline" data-hint="Skill {{iStrand}}.{{iCompetency}}.{{iSkill}}" href="/{{localeInfo.lang}}/skills/{{iStrand}}.{{iCompetency}}.{{iSkill}}/v{{version}}">{{gettext(skill.skill)}}</a></li>
         {% endfor %}
       </ul>
     </article>

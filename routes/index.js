@@ -1,4 +1,4 @@
-module.exports = function(app, standardText, languages) {
+module.exports = function(app, standardText) {
 
   function page(title, data) {
     data = data || {};
@@ -42,11 +42,7 @@ module.exports = function(app, standardText, languages) {
     }
   });
 
-  app.get('/languages', function(req, res) {
-    res.render('languages.html', {
-      languages: languages
-    });
-  });
+  app.get('/languages', page('languages'));
 
   app.get('/v' + app.locals.version, page('index', {
     standardText: standardText

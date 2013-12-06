@@ -1,23 +1,4 @@
 /*********************************************************
-* Colours
-*/
-@yellow: #ffcd36;
-@lightyellow: #fff2cc;
-@darkyellow: #eab514;
-@orange: #ee8950;
-@darkgreen: #328f70;
-@red: #D93B3B;
-@green: #3fb58e;
-@grey: #4d4e53;
-@lightgrey: #e3eaee;
-@midgrey: #ddd;
-@white: #fff;
-@black: #000;
-
-@blue: #0099FF;
-@lightbrown: lighten(#696659, 30%);
-
-/*********************************************************
 * Breakpoints
 */
 @width-small: 320px;
@@ -41,13 +22,30 @@
 
 // Hint
 @import (less) "bower_components/hint.css/hint.css";
-.hint,
-[data-hint] {
+.hintCustom(@bg, @shadow) {
+  &:after {
+    background-color: @bg;
+    text-shadow: 0 -1px 0px @shadow; }
+  &.hint--top:before {
+    border-top-color: @bg; }
+  &.hint--bottom:before {
+    border-bottom-color: @bg; }
+  &.hint--left:before {
+    border-left-color: @bg; }
+  &.hint--right:before {
+    border-right-color: @bg; }
+}
+
+// Mods, most hints need to be block
+.hint,[data-hint] {
   display: block;
 }
-.hint--inline,
-.hint--inline[data-hint] {
+.hint--inline, .hint--inline[data-hint] {
   display: inline-block;
+}
+// Custom hint style
+.hint--red {
+  .hintCustom(@red, darken(@red, 10%));
 }
 
 // Myfonts
@@ -186,28 +184,6 @@ h1 {
   }
 }
 
-.language-picker {
-  font-size: 0.7em;
-
-  > a {
-    opacity: 0.4;
-    margin-right: 0.5em;
-    border-bottom: none;
-  }
-  .fa-globe {
-    margin-right: 0.2em;
-  }
-  .selected {
-    opacity: 1;
-  }
-}
-
-.language-picker-box {
-  width: 300px;
-  border: 1px solid @blue;
-  padding: 1em;
-}
-
 .version {
   @media print {
     font-size: 1em;
@@ -270,6 +246,7 @@ h2.strand .section-title {
     font-size: 0.8em;
     text-align: right;
     color: @lightbrown;
+    color: @red;
     content: counter(strand);
   }
 }
@@ -302,14 +279,13 @@ h3 {
   font-size: 1.3em;
   margin: 0;
   line-height: @leadingpx;
-  font-family: 'Sharik Sans SemiBold';
 }
 
 
 h3 + p {
   margin: 0;
   color: @lightbrown;
-  font-family: 'Sharik Sans Italic';
+  font-style: italic;
 }
 
 
@@ -351,7 +327,7 @@ strong {
 .defn {
   order: 3;
   color: lighten(#595647, 20%);
-  font-family: 'Sharik Sans';
+  font-weight: normal;
   font-size: 0.5em;
   line-height: 1.16;
   font-weight: normal;
@@ -385,18 +361,10 @@ section {
   }
 }
 
-// #section-exploring {
-//   color: #1E4147;
-//   background-color: lighten(#AAC789, 15%);
-//   .leader, .defn, h3 + p {
-//     color: #437356;
-//   }
-// }
-
-
 .title-section {
   font-size: 1.3em;
   line-height: 1.8;
+  position: relative;
 
   p {
     margin: 1.38em 0;

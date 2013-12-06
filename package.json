@@ -15,7 +15,9 @@
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-develop": "~0.2.2",
     "grunt-contrib-copy": "~0.4.1",
-    "webmaker-i18n": "https://github.com/mozilla/node-webmaker-i18n/archive/v0.3.3.tar.gz"
+    "webmaker-i18n": "https://github.com/mozilla/node-webmaker-i18n/archive/v0.3.3.tar.gz",
+    "shelljs": "~0.2.6",
+    "grunt-font-optimizer": "~0.2.4"
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install"
