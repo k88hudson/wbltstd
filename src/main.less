@@ -70,20 +70,30 @@
 @fontStack: 'Sharik Sans', 'Roboto Slab', sans-serif;
 @displayFont: 'Sharik Sans', 'Roboto Slab', sans-serif;
 
-@leading: 1.8em;
-@leadingpx: 36px;
+@leading: 1.8rem;
 
+
+html,
 body {
   font-family: @fontStack;
   color: #595647;
-  line-height: @leadingpx;
-  font-size: 20px;
-  margin: 0;
-  padding: 0 @leadingpx;
+  font-size: 14px;
+  line-height: 1.6rem;
+
+  @media screen and (min-width: @width-medium) {
+    font-size: 20px;
+    line-height: @leading;
+
+  }
 
   @media print {
     font-size: 16px;
   }
+}
+
+body {
+  margin: 0;
+  padding: 0 @leading;
 }
 
 .main {
@@ -159,7 +169,7 @@ header {
     background: fade(white, 90%);
 
     .logo {
-      color: #111;
+      color: #CCC;
     }
   }
 
@@ -190,7 +200,7 @@ h1 {
     line-height: 1;
   }
   font-size: 2em;
-  line-height: @leadingpx * 1.5;
+  line-height: @leading * 1.5;
   margin-bottom: 0.58em;
   margin-top: 0;
 
@@ -226,9 +236,9 @@ h1 {
 .wrong-version {
   background: @yellow;
   border: 1px solid darken(@yellow, 15%);
-  padding: @leadingpx/2;
+  padding: @leading/2;
   border-raidus: 3px;
-  margin-bottom: @leadingpx;
+  margin-bottom: @leading;
   .fa-warning {
     float: left;
     margin-right: 15px;
@@ -238,7 +248,7 @@ h1 {
 
 h2 {
   font-size: 2.5em;
-  line-height: 2 * @leadingpx;
+  line-height: 2 * @leading;
   margin-bottom: 0;
   margin-top: 2 * 1/2.5 * @leading;
 }
@@ -259,7 +269,6 @@ h2.strand .section-title {
     font-size: 0.8em;
     text-align: right;
     color: @lightbrown;
-    color: @red;
     content: counter(strand);
   }
 }
@@ -291,7 +300,7 @@ ul {
 h3 {
   font-size: 1.3em;
   margin: 0;
-  line-height: @leadingpx;
+  line-height: @leading;
 }
 
 
@@ -391,7 +400,7 @@ section {
 }
 
 article {
-  margin: @leadingpx 0;
+  margin: @leading 0;
 }
 
 footer {

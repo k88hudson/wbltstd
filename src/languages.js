@@ -11,7 +11,11 @@ define(['jquery', 'list', 'fuzzySearch'], function($, List, Fuzzy) {
     plugins: [fuzzy]
   });
 
-  $currentLang.on('click', function() {
+  $currentLang.on('click', function(e) {
+    if ($(window).width() < 500) {
+      return;
+    }
+    e.preventDefault();
     var offset = $currentLang.position();
 
     if ($languageList.is(':visible')) {
