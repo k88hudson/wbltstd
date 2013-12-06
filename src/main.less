@@ -87,7 +87,9 @@ body {
 }
 
 .main {
-  padding-top: 4 * @leading;
+  @media screen and (min-width: @width-large) {
+    padding-top: 4 * @leading;
+  }
   @media print {
     padding-top: 0;
   }
@@ -199,29 +201,26 @@ h1 {
 }
 
 .version {
-  @media print {
-    font-size: 1em;
-    padding: 0;
+  color: @blue;
+  .fa-github {
+    display: none;
+  }
+  @media screen and (min-width: @width-medium) {
+    font-size: 0.25em;
+    background: @blue;
+    color: white;
     border: none;
-    color: inherit;
-    background: none;
-    whtie-space: nowrap;
+    vertical-align: middle;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    white-space: nowrap;
     .fa-github {
-      display: none;
+      display: inline-block;
+      font-size: 0.8em;
+      opacity: 0.8;
     }
   }
-  font-size: 0.25em;
-  background: @blue;
-  color: white;
-  border: none;
-  vertical-align: middle;
-  padding: 0.3em;
-  border-radius: 0.3em;
 
-  .fa-github {
-    font-size: 0.8em;
-    opacity: 0.8;
-  }
 }
 
 .wrong-version {
@@ -376,13 +375,14 @@ section {
 }
 
 .title-section {
-  font-size: 1.3em;
-  line-height: 1.8;
-  position: relative;
-
-  p {
-    margin: 1.38em 0;
+  @media (min-width: @width-large) {
+    font-size: 1.3em;
+    line-height: 1.8;
+    p {
+      margin: 1.38em 0;
+    }
   }
+  position: relative;
 
   @media print {
     font-size: 1em;
