@@ -8,6 +8,10 @@ module.exports = function(app, standardText, languages) {
     };
   }
 
+  app.get('/format', page('format', {
+    standardText: standardText
+  }));
+
   app.get('/settings', page('settings'));
 
   app.get('/', function(req, res) {

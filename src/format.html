@@ -1,0 +1,21 @@
+{
+  {% for strand in standardText %}
+  {% set iStrand = loop.index %}
+
+  "{{iStrand}}.0.0": "{{gettext(strand.strand)}}",
+  "{{iStrand}}.0.0.desc": "{{gettext(strand.strandDesc)}}",
+
+  {% for competency in strand.competencies %}
+  {% set iCompetency = loop.index %}
+  "{{iStrand}}.{{iCompetency}}.0": "{{gettext(competency.competency)}}",
+  "{{iStrand}}.{{iCompetency}}.0.desc": "{{gettext(competency.competencyDesc)}}",
+
+  {% for skill in competency.skills %}
+  {% set iSkill = loop.index %}
+  "{{iStrand}}.{{iCompetency}}.{{iSkill}}": "{{gettext(skill.skill)}}",
+  {% endfor %}
+
+  {% endfor %}
+
+  {% endfor %}
+}
