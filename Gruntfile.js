@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     less: {
@@ -24,8 +24,7 @@ module.exports = function (grunt) {
     },
     font_optimizer: {
       default: {
-        options: {
-        },
+        options: {},
         files: {
           'dist': ['src/Sharik/fonts/*.ttf'],
         }
@@ -35,7 +34,9 @@ module.exports = function (grunt) {
       less: {
         files: ['src/**/*.less'],
         tasks: ['less:development'],
-        options: { nospawn: true }
+        options: {
+          nospawn: true
+        }
       },
       node: {
         files: [
@@ -44,14 +45,18 @@ module.exports = function (grunt) {
           'lib/*.js',
         ],
         tasks: ['jshint', 'develop'],
-        options: { nospawn: true }
+        options: {
+          nospawn: true
+        }
       },
       requirejs: {
         files: [
           'src/**/*.js'
         ],
         tasks: ['jshint', 'copy'],
-        options: { nospawn: true }
+        options: {
+          nospawn: true
+        }
       },
       nunjucks: {
         files: ['src/**/*.html'],
@@ -62,7 +67,7 @@ module.exports = function (grunt) {
       main: {
         expand: true,
         cwd: './src',
-        src:'**/*.js',
+        src: '**/*.js',
         dest: 'dist'
       }
     },
@@ -117,7 +122,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('fonts', [
-  'font_optimizer:default'
+    'font_optimizer:default'
   ]);
 
   grunt.registerTask('heroku', [
