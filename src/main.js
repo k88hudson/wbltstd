@@ -1,5 +1,5 @@
 requirejs.config({
-  baseUrl: '../bower_components',
+  baseUrl: '/bower_components',
   paths: {
     main: '../src/main',
     nunjucks: 'nunjucks/browser/nunjucks',
@@ -7,7 +7,10 @@ requirejs.config({
     jquery: 'jquery/jquery',
     list: 'listjs/dist/list.min',
     fuzzySearch: 'list.fuzzysearch.js/dist/list.fuzzysearch.min',
-    languages: '../languages'
+    languages: '../languages',
+    makeapi: 'makeapi-client/src/make-api',
+    masonry: 'masonry/masonry',
+    imagesloaded: 'imagesloaded/imagesloaded'
   }
 });
 

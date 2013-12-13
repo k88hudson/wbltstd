@@ -1,0 +1,11 @@
+{% for make in makes %}
+<div class="make">
+  <div class="make-likes">
+    {{make.likes.length}} likes
+    {% if make.likes.length > 28 %}<span class="make-top">top make</span>{% endif %}</div>
+  <div class="make-title"><a href="{{make.url}}">{{ make.title }}</a></div>
+ <!--  <img src="{{ make.thumbnail }}"> -->
+  <div class="make-desc">{{ make.description }}</div>
+  <div class="make-id">{{ make._id }}</div>
+</div>
+{% endfor %}

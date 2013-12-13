@@ -16,7 +16,11 @@
       <h2>{{gettext(skillText)}}</h2>
 
     </section>
-    <script src="/bower_components/requirejs/require.js" data-main="main"></script>
+    <section class="skills-related-content">
+      <h3>Most popular related content</h3>
+      <div id="make-results"></div>
+    </section>
   </body>
 </html>
 {% endblock %}
+{% block requirejs %}skill{% endblock %}

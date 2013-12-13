@@ -9,6 +9,10 @@
     {% if localeInfo.lang == 'ru' %}
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     {% else %}
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic' rel='stylesheet' type='text/css'>
+
+
     <link rel="stylesheet" href="/Sharik/shariksans.css">
     <!-- <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'> -->
     {% endif %}
@@ -47,7 +51,7 @@
     </footer>
 
     <script id="require-js" src="/bower_components/requirejs/require.js"
-      data-main="main"
+      data-main="/main.js"
       data-page="{% block requirejs %}{% endblock %}"></script>
   </body>
 </html>

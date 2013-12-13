@@ -69,6 +69,7 @@
 
 @fontStack: 'Sharik Sans', 'Roboto Slab', sans-serif;
 @displayFont: 'Sharik Sans', 'Roboto Slab', sans-serif;
+@displayFontWeight: 700;
 
 @leading: 1.8rem;
 
@@ -179,7 +180,7 @@ header {
   }
   .logo {
     font-family: @displayFont;
-    font-weight: 700;
+    font-weight: @displayFontWeight;
     margin-right: 2em;
     color: white;
   }
@@ -192,6 +193,7 @@ header {
 
 h1, h2, h3 {
   font-family: @displayFont;
+  font-weight: @displayFontWeight;
 }
 
 h1 {
@@ -220,7 +222,10 @@ h1 {
     background: @blue;
     color: white;
     border: none;
-    vertical-align: middle;
+    position: relative;
+    top: -0.8em;
+    display: inline-block;
+    vertical-align: baseline;
     padding: 0.3em;
     border-radius: 0.3em;
     white-space: nowrap;
@@ -469,5 +474,18 @@ footer {
   }
 }
 
+// SKILLS {
+.skills-related-content {
+  margin-top: @leading;
+  h3 {
+    color: #999;
+    margin-bottom: @leading;
+  }
+}
+
 // PAGES
 @import './languages';
+
+
+// MAKES
+@import 'makes-default/makes-default';
